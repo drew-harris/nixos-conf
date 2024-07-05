@@ -32,8 +32,6 @@
 
     neofetch
     #nnn # terminal file manager
-
-
     gh
     # archives
 
@@ -43,6 +41,7 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    sesh 
 
     file
     which
