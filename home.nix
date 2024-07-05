@@ -33,6 +33,8 @@
     neofetch
     #nnn # terminal file manager
 
+
+    gh
     # archives
 
     # utils
