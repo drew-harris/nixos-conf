@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  currentDir = builtins.toString ./.;
+in
 {
   # TODO please change the username & home directory to your own
   home.username = "drew";
@@ -95,6 +98,8 @@
 
   programs.lazygit.enable = true;
 
+  programs.tmux.enable = true;
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -119,4 +124,6 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.file.".tmux.conf".text = builtins.readFile ./tmux/.tmux.conf;
 }
