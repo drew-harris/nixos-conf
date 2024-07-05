@@ -110,6 +110,10 @@
   # changes in each release.
   home.stateVersion = "23.11";
 
+  home.shellAliases = {
+      lg = "lazygit";
+  };
+
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

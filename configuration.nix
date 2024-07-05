@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -97,12 +97,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     gcc
      gnome.gnome-tweaks
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      git
      wget
      curl
+     nodejs_20
   ];
+
+  programs.neovim = {
+    enable = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
