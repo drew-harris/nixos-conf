@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  currentDir = builtins.toString ./.;
-in
 {
   # TODO please change the username & home directory to your own
   home.username = "drew";
@@ -125,5 +122,5 @@ in
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.file.".tmux.conf".text = builtins.readFile ./tmux/.tmux.conf;
+  home.file.".tmux.conf".source = ./tmux/.tmux.conf;
 }
